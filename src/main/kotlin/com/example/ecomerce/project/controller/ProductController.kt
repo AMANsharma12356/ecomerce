@@ -1,9 +1,7 @@
 package com.example.ecomerce.project.controller
 
 import com.example.ecomerce.project.model.Product
-import com.example.ecomerce.project.model.User
 import com.example.ecomerce.project.service.ProductService
-import com.example.ecomerce.project.service.UserService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
