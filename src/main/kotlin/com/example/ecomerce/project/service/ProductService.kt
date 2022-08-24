@@ -10,6 +10,7 @@ import reactor.core.publisher.Flux
 @Service
 class ProductService
     (val productRepository: ProductRepository) {
-        fun findAll(): Flux<Product> =
-            productRepository.findAll()
+        fun findAll(): Flux<Product> {
+           return productRepository.findAll()
+    }
     }

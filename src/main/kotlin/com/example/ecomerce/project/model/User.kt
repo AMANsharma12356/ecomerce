@@ -11,9 +11,6 @@ data class User (
     var mail: String,
     var contactno: Int,
     var gender: String,
-//aman
-//mahesh
-//saurab
-//hritik
-//sharma
+    var password:String,
+ //a
     )
