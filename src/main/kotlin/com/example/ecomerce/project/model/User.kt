@@ -12,5 +12,5 @@ data class User (
     var contactno: Int,
     var gender: String,
     //Comments by sidharth
-    //Secon commment
+    //Second commment
     )
