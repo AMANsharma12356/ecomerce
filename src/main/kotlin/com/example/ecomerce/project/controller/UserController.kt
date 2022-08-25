@@ -7,10 +7,11 @@ import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("users/")
 class UserController
     (val userService : UserService) {
-    @GetMapping("/users")
+
+    @GetMapping("list")
     fun getAllUsers(): Flux<User> {
         return userService.findAll()
     }
@@ -20,7 +21,7 @@ class UserController
         return userService.findAll()
     }
 
-    @PostMapping("/user/add")
+    @PostMapping("add")
     fun addUser(@RequestBody user: User): Mono<User> {
         return userService.addUsers(user)
     }
@@ -34,6 +35,4 @@ class UserController
     fun updateUserById(@PathVariable("id") id: Int, @RequestBody user: User): Mono<User> {
         return userService.updateUser(id, user)
     }
-
-
 }
