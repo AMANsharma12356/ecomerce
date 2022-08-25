@@ -8,6 +8,6 @@ class Product (
     val prodname : String,
     val prodprice : Float,
     //val proquantity : Int,
-    //25081233
+    //saurabs also synced
 
 )
