@@ -9,7 +9,7 @@ data class User (
     var id: Int,
     var name: String,
     var mail: String,
-    var contactno: Int,
+    var contactno: Long,
     var gender: String,
     var password:String,
  //a
