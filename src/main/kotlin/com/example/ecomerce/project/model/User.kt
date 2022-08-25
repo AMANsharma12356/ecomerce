@@ -12,8 +12,4 @@ data class User (
     var contactno: Int,
     var gender: String,
 //aman
-//mahesh
-//saurab
-//hritik
-//sharma
     )
