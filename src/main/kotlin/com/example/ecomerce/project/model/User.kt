@@ -11,6 +11,6 @@ data class User (
     var mail: String,
     var contactno: Long,
     var gender: String,
-    var password:String,
- //a
+//aman
+//MAHESH
     )
