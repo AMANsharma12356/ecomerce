@@ -16,17 +16,12 @@ class UserController
         return userService.findAll()
     }
 
-   /* @GetMapping("list")
-    fun getUserBasisSearch(@PathVariable(required = true) query: String): Flux<User> {
-        return userService.findAll()
-    }
-*/
 
-    @GetMapping("login/{name}")
-   fun getUserByName(@PathVariable("name") name:String):Mono<User> {
+    /*@GetMapping("login/{name}")
+    fun getUserByName(@PathVariable("name") name:String):Mono<User> {
         return userService.findByName(name)
 
-    }
+    }*/
 
     @PostMapping("add")
     fun addUser(@RequestBody user: User): Mono<User> {
