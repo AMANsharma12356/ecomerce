@@ -15,10 +15,10 @@ import reactor.core.publisher.Mono
 class LoginController {
     @Autowired
     private val loginRepository: LoginRepository? =null
-    @PostMapping("add")
-    fun addLogin(@RequestBody login: Login): Mono<Login> {
-        return loginService.addLogin(login)
-    }
+   // @PostMapping("add")
+//    fun addLogin(@RequestBody login: Login): Mono<Login> {
+      //  return loginService.addLogin(login)
+    //}
 }
 
 

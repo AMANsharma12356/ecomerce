@@ -8,9 +8,9 @@ import reactor.core.publisher.Mono
 
 interface LoginRepository : ReactiveCrudRepository<Login,Int> {
 
-    @Query("db.user.find( { name: "" })")
-     fun findByName(id: String): Mono<Login> {
-
-
-    }
+//    @Query("db.user.find( { name: "" })")
+//     fun findByName(id: String): Mono<Login> {
+//
+//
+//    }
 }

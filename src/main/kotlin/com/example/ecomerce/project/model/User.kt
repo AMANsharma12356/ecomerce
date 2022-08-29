@@ -8,9 +8,8 @@ data class User (
     @Id
     var id: Int,
     var name: String,
-    var mail: String,
+//    var mail: String,
     var contactno: Long,
-    var gender: String,
-//aman
-//MAHESH
+    var password: String,
+
     )
