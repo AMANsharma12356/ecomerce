@@ -27,15 +27,16 @@ class UserService(val userRepository: UserRepository) {
                 it.contactno = user.contactno
                 it.password=user.password
                 userRepository.save(it)
-
             }
     }
 
-    /*fun findByName(name:String):Mono<User>{
-        userRepository.findByName(name)
-
-
-        return "Password ok"
+   /* fun findUserByName(name:String):User{
+        var a:User =userRepository.findByName(name)
+        var p1=a.password
+        //if(p1==this.password){}
+        //operators
+        var b:Boolean
+        return p1
 
     }*/
 }
