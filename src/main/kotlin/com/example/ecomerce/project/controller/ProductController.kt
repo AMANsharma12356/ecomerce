@@ -9,16 +9,16 @@ import org.springframework.web.bind.annotation.RestController
 import reactor.core.publisher.Flux
 
 @RestController
-@RequestMapping("prod/")
+@RequestMapping("prod")
 class ProductController
     (val productService: ProductService) {
 
-    @GetMapping("list")
+    @GetMapping("/list")
         fun getAllProducts(): Flux<Product> {
             return productService.findAll()
         }
 
-    @GetMapping("products/list/")
+    @GetMapping("/products/list")
         fun getProductBasisSearch(@PathVariable(required = true) query: String): Flux<Product> {
             return productService.findAll()
         }

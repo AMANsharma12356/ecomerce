@@ -11,20 +11,28 @@ import reactor.core.publisher.Mono
 class UserController
     (val userService : UserService) {
 
-    @GetMapping("list")
+    @GetMapping("lists")
     fun getAllUsers(): Flux<User> {
         return userService.findAll()
     }
 
-    @GetMapping("/users/list/")
+   /* @GetMapping("list")
     fun getUserBasisSearch(@PathVariable(required = true) query: String): Flux<User> {
         return userService.findAll()
+    }
+*/
+
+    @GetMapping("login/{name}")
+   fun getUserByName(@PathVariable("name") name:String):Mono<User> {
+        return userService.findByName(name)
+
     }
 
     @PostMapping("add")
     fun addUser(@RequestBody user: User): Mono<User> {
         return userService.addUsers(user)
     }
+
 
     @DeleteMapping("/user/delete/{id}")
     fun deleteUserById(@PathVariable("id") id: Int): Mono<Void> {

@@ -24,11 +24,18 @@ class UserService(val userRepository: UserRepository) {
             .flatMap {
                 it.id = user.id
                 it.name = user.name
-                it.mail = user.mail
                 it.contactno = user.contactno
-                it.gender = user.gender
+                it.password=user.password
                 userRepository.save(it)
 
             }
     }
+
+    /*fun findByName(name:String):Mono<User>{
+        userRepository.findByName(name)
+
+
+        return "Password ok"
+
+    }*/
 }
