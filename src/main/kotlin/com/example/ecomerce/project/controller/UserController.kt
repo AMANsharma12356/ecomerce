@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
+@CrossOrigin(origins = ["http://localhost:3001/"])
 @RestController
 @RequestMapping("users/")
 class UserController
@@ -16,17 +17,16 @@ class UserController
         return userService.findAll()
     }
 
-    @GetMapping("login/{name}")
+    /*@GetMapping("login/{name}")
     fun getUserByName(@PathVariable("name") name:String):User {
         return userService.findUserByName(name)
 
-    }
+    }*/
 
     @PostMapping("add")
     fun addUser(@RequestBody user: User): Mono<User> {
         return userService.addUsers(user)
     }
-
 
     @DeleteMapping("/user/delete/{id}")
     fun deleteUserById(@PathVariable("id") id: Int): Mono<Void> {
