@@ -18,11 +18,10 @@ class UserController
     }
 
     /*@GetMapping("login/{name}")
-    fun getUserByName(@PathVariable("name") name:String):User {
-        return userService.findUserByName(name)
-
-    }*/
-
+    fun getUserByName(@PathVariable("name") name:String,passw):Mono<User> {
+        return userService.findUserByName(name,password)
+    }
+*/
     @PostMapping("add")
     fun addUser(@RequestBody user: User): Mono<User> {
         return userService.addUsers(user)

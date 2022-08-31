@@ -30,13 +30,17 @@ class UserService(val userRepository: UserRepository) {
             }
     }
 
-   /* fun findUserByName(name:String):User{
-        var a:User =userRepository.findByName(name)
-        var p1=a.password
-        //if(p1==this.password){}
-        //operators
-        var b:Boolean
-        return p1
+    /*fun findUserByName(name:String):Boolean{
+        var a:Boolean
+        var orgpass:String
+        userRepository.findByName(name)
+            .flatMap {
+               if( it.password==){
+                   a=true
+               }
+            a=false }
 
+        a=true
+        return a
     }*/
 }
