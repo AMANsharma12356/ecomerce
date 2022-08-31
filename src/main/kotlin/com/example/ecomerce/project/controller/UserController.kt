@@ -28,12 +28,12 @@ class UserController
         return userService.addUsers(user)
     }
 
-    @DeleteMapping("/user/delete/{id}")
+    @DeleteMapping("user/delete/{id}")
     fun deleteUserById(@PathVariable("id") id: Int): Mono<Void> {
         return userService.deleteById(id)
     }
 
-    @PutMapping("/user/update/{id}")
+    @PutMapping("update/{id}")
     fun updateUserById(@PathVariable("id") id: Int, @RequestBody user: User): Mono<User> {
         return userService.updateUser(id, user)
     }

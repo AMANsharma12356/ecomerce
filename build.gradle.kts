@@ -31,11 +31,15 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
+	implementation("junit:junit:4.12")
 	compileOnly("org.projectlombok:lombok")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	annotationProcessor("org.projectlombok:lombok")
+	testImplementation("io.mockk:mockk:1.10.6")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("io.projectreactor:reactor-test")
+	testImplementation("org.junit.jupiter:junit-jupiter:5.8.2")
+	testImplementation("io.kotlintest:kotlintest-runner-junit5:3.4.2")
 }
 
 tasks.withType<KotlinCompile> {
