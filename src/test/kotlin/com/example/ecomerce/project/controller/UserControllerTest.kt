@@ -91,7 +91,7 @@ class UserControllerTest {
         }
     }
 
-    @Test
+    /*@Test
     fun `should be able to update the user`() {
 
         val expectedResult = listOf(
@@ -116,7 +116,7 @@ class UserControllerTest {
         verify(exactly = 1) {
             userService.updateUser(999,user)
         }
-    }
+    }*/
 
     @TestConfiguration
     class ControllerTestConfig {
@@ -124,5 +124,5 @@ class UserControllerTest {
         fun userService() = mockk<UserService>()
     }
 
-    }
+}
 
