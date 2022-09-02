@@ -1,6 +1,5 @@
 package com.example.ecomerce.project.controller
 
-import com.example.ecomerce.project.controller.UserController
 import com.example.ecomerce.project.model.User
 import com.example.ecomerce.project.service.UserService
 import io.kotlintest.shouldBe
@@ -30,16 +29,16 @@ class UserControllerTest {
 
     @Test
     fun `should return list of users`(){
-        val user1 = User(999,"Mohanlal" ,1234567890 , "abcd@abcd")
-        val user2 = User(888,"Mammooty" , 1234567891 , "abcd@abca")
+        val user1 = User(999,"Rahul" ,1234567890 , "abcd@abcd")
+        val user2 = User(888,"Ramesh" , 1234567891 , "abcd@abca")
 
         val expectedResult = listOf(
             mapOf("id" to 999,
-                "name" to "Mohanlal",
+                "name" to "Rahul",
                 "contactno" to 1234567890,
                 "password" to "abcd@abcd" ),
             mapOf("id" to 888,
-                "name" to "Mammotty",
+                "name" to "Ramesh",
                 "contactno" to 1234567891,
                 "password" to "abcd@abca"),)
 
@@ -67,11 +66,11 @@ class UserControllerTest {
 
         val exepectedResponse = mapOf(
             "id" to 999,
-            "name" to "Mohanlal",
+            "name" to "Rahul",
             "contactno" to 1234567890,
             "password" to "abcd@abcd" )
 
-        val user = User(999,"Mohanlal" ,1234567890 , "abcd@abcd")
+        val user = User(999,"Rahul" ,1234567890 , "abcd@abcd")
 
         every {
             userService.addUsers(user)
@@ -90,34 +89,31 @@ class UserControllerTest {
             userService.addUsers(user)
         }
     }
+    /*   @Test
+         fun `should be able to update the user`() {
 
-    /*@Test
-    fun `should be able to update the user`() {
+              val expectedResult = listOf(
+                  mapOf( "id" to 999,
+                      "name" to "Rahul",
+                      "contactno" to 1234567890,
+                      "password" to "abcd@abcd" )
+              )
+              val user = User(999,"Rahul" ,1234567890 , "abcd@abcd")
 
-        val expectedResult = listOf(
-            mapOf( "id" to 999,
-                "name" to "Mohanlal",
-                "contactno" to 1234567890,
-                "password" to "abcd@abcd" )
-        )
-        val user = User(999,"Mohanlal" ,1234567890 , "abcd@abcd")
+              every {
+                  userService.updateUser(999,user)
+              } returns Mono.just(user)
 
-        every {
-            userService.updateUser(999,user)
-        } returns Mono.just(user)
+              val response = client.put()
+                  .uri("/users/update/id")
+                  .bodyValue(user)
+                  .exchange()
+                  .expectStatus().is2xxSuccessful
 
-        val response = client.put()
-            .uri("/users/update/{id}")
-            .bodyValue(user)
-            .exchange()
-            .expectStatus().is2xxSuccessful
-
-
-        verify(exactly = 1) {
-            userService.updateUser(999,user)
-        }
-    }*/
-
+              verify(exactly = 1) {
+                  userService.updateUser(999,user)
+              }
+          }*/
     @TestConfiguration
     class ControllerTestConfig {
         @Bean
