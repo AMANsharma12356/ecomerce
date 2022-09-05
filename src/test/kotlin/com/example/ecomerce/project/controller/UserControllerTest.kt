@@ -43,7 +43,7 @@ class UserControllerTest {
                 "password" to "abcd@abca"),)
 
         every{
-            userService.findAll()}returns Flux.just(user1,user2)
+            userService.findAll() } returns Flux.just(user1,user2)
 
         val response = client.get()
             .uri("/users/lists")
@@ -89,7 +89,8 @@ class UserControllerTest {
             userService.addUsers(user)
         }
     }
-    /*   @Test
+
+  /*    @Test
          fun `should be able to update the user`() {
 
               val expectedResult = listOf(
@@ -105,10 +106,12 @@ class UserControllerTest {
               } returns Mono.just(user)
 
               val response = client.put()
-                  .uri("/users/update/id")
+                  .uri("users/update/id")
                   .bodyValue(user)
                   .exchange()
                   .expectStatus().is2xxSuccessful
+
+          //response shouldBe expectedResult
 
               verify(exactly = 1) {
                   userService.updateUser(999,user)
