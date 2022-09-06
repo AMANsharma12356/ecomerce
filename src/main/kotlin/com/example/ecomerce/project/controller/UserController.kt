@@ -8,7 +8,7 @@ import reactor.core.publisher.Mono
 
 @CrossOrigin(origins = ["http://localhost:3000/"])
 @RestController
-@RequestMapping("users/")
+@RequestMapping("users")
 class UserController
     (val userService : UserService) {
 
@@ -17,20 +17,19 @@ class UserController
         return userService.findAll()
     }
 
-
     @PostMapping("add")
     fun addUser(@RequestBody user: User): Mono<User> {
         return userService.addUsers(user)
     }
 
     @DeleteMapping("delete/{id}")
-    fun deleteUserById(@PathVariable("id") id: Int): Mono<Void> {
-        return userService.deleteById(id)
+    fun deleteUserById(@PathVariable("id") userId: Int): Mono<Void> {
+        return userService.deleteById(userId)
     }
 
     @PutMapping("update/{id}")
-    fun updateUserById(@PathVariable("id") id: Int, @RequestBody user: User): Mono<User> {
-        return userService.updateUser(id, user)
+    fun updateUserById(@PathVariable("id") userId: Int, @RequestBody user: User): Mono<User> {
+        return userService.updateUser(userId, user)
     }
     /*@GetMapping("login/{name}")
    fun getUserByName(@PathVariable("name") name:String,passw):Mono<User> {

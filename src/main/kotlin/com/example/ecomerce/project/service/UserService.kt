@@ -11,21 +11,21 @@ class UserService(val userRepository: UserRepository) {
     fun findAll(): Flux<User> =
         userRepository.findAll()
 
-    fun deleteById(id: Int): Mono<Void> {
-        return userRepository.deleteById(id)
+    fun deleteById(userId: Int): Mono<Void> {
+        return userRepository.deleteById(userId)
     }
 
     fun addUsers(user:User): Mono<User>{
         return userRepository.save(user)
     }
 
-    fun updateUser(id: Int, user: User): Mono<User> {
-        return userRepository.findById(id)
+    fun updateUser(userId: Int, user: User): Mono<User> {
+        return userRepository.findById(userId)
             .flatMap {
-                it.id = user.id
-                it.name = user.name
-                it.contactno = user.contactno
-                it.password=user.password
+                it.userId = user.userId
+                it.userName = user.userName
+                it.userContactno = user.userContactno
+                it.userPassword=user.userPassword
                 userRepository.save(it)
             }
     }
