@@ -6,5 +6,5 @@ import org.springframework.data.mongodb.core.mapping.Document
 class Product (
     val productId : Int,
     val productName : String,
-    val productPrice : Float,
+    val productPrice : Int,
 )

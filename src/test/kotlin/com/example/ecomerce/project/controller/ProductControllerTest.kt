@@ -12,8 +12,8 @@ class ProductControllerTest {
 
     @Test
     fun `show the list of products`() {
-        val prod1= Product(111,"Mobile1",20000f)
-        val prod2= Product(222,"Mobile2",10000f)
+        val prod1= Product(111,"Mobile1",20000)
+        val prod2= Product(222,"Mobile2",10000)
 
         val expectedResult = listOf(
             mapOf("productId" to 111,

@@ -24,7 +24,7 @@ class UserController
 
     @DeleteMapping("delete/{id}")
     fun deleteUserById(@PathVariable("id") userId: Int): Mono<Void> {
-        return userService.deleteById(userId)
+        return userService.deleteUserById(userId)
     }
 
     @PutMapping("update/{id}")
